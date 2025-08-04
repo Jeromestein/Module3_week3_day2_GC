@@ -1,0 +1,128 @@
+// Variables
+$primary-color: #4CAF50;
+$primary-hover: #45a049;
+$text-dark: #333;
+$text-light: #666;
+$white: #fff;
+$black: #000;
+$border-color: #e0e0e0;
+$bg-light: #f5f5f5;
+$bg-lighter: #f8f8f8;
+$shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+// Common button styles
+%button-base {
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+// Common section styles
+%section-base {
+    text-align: center;
+    padding: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: $bg-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing-table {
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: $shadow;
+}
+
+/* Header Section */
+.header {
+    background-color: $black;
+    color: $white;
+    @extend %section-base;
+    
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: $white;
+        margin: 0;
+    }
+}
+
+/* Features Section */
+.features {
+    background-color: $white;
+    
+    .feature-item {
+        padding: 15px 20px;
+        text-align: center;
+        border-bottom: 1px solid $border-color;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+        
+        span {
+            color: $text-dark;
+            font-size: 16px;
+        }
+    }
+}
+
+/* Pricing Section */
+.pricing {
+    background-color: $white;
+    @extend %section-base;
+    
+    .price {
+        font-size: 32px;
+        font-weight: bold;
+        color: $text-dark;
+        margin-bottom: 5px;
+    }
+    
+    .period {
+        font-size: 14px;
+        color: $text-light;
+    }
+}
+
+/* Call to Action Section */
+.cta {
+    background-color: $bg-lighter;
+    @extend %section-base;
+    
+    .signup-btn {
+        background-color: $primary-color;
+        color: $white;
+        @extend %button-base;
+        
+        &:hover {
+            background-color: $primary-hover;
+        }
+        
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+} 
